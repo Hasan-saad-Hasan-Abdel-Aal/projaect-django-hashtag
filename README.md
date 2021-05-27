@@ -1,0 +1,1 @@
+# projaect-django-hashtag

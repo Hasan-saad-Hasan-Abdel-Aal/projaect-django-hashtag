@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<main class="main">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <div class="container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html" class="fs-3 fw-bold">الرئيسية</a></li> .
+                        <li class="breadcrumb-item fs-3 fw-bold active" aria-current="page">المنتج</li>
+                    </ol>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="product-single-container product-single-grid">
+                    <div class="row">
+                        <div class="col-md-5 text-end">
+                            <div class="product-single-details ">
+                                <h1 class="product-title pb-1 fs-1 ">{{object}}</h1>
+                                <div class="category-wrap pb-4">
+                                    <div class="category-list">
+                                        <a href="category.html" class="product-category  fs-5 fw-bold">{{object.get_category_dsplay}}</a>
+                                    </div>
+                                </div>
+                                <!--<div class="ratings-container">
+                                    <div class="product-ratings">
+                                        <span class="ratings" style="width:60%"></span>
+                                    </div>
+
+                                    <a href="#" class="rating-link">( 6 Reviews )</a>
+                                </div>--><!-- End .product-container -->
+                                {% if object.ProStock == True %}
+                                <div class="price-box">
+                                    {% if product.ProDiscountPrice %}
+                                            <span class="old-price fs-2"><p class="d-inline-block fs-4 ">ج م</p>{{product.ProPrice}}</span>
+                                            <span class="product-price"><p class="d-inline-block fs-4 ">ج م</p>{{product.ProDiscountPrice}}</span>
+                                        {% else %}
+                                            <span class="product-price"><p class="d-inline-block fs-4 ">ج م</p>{{product.ProPrice}}</span>
+                                        {% endif %}
+                                </div><!-- End .price-box -->
+                                {% else %}
+                                <ul class="single-info-list fs-3 fw-bold">
+                                    <li><strong class="text-danger fs-4">نفذت كمية المخزون</strong></li>
+                                </ul>
+                                {% endif %}
+
+                                <div class="product-action" style="display: block;">
+                                    <a href="{{object.get_add_to_cart_url}}" class="paction add-cart fs-1 fw-bold " id="success" onclick="click();" title="أضفه الي سلتك">
+                                        أضافه للسلة
+                                    </a>
+                                    <a href="{{object.get_remove_from_cart_url}}" class="paction add-cart fs-1 fw-bold " id="success" onclick="click();" title="مسح من السلة">
+                                        مسح من السلة
+                                    </a>
+                                    
+                                </div><!-- End .product-action -->
+                                
+                            </div><!-- End .product-single-details -->
+                        </div><!-- End .col-md-4 -->
+                        <div class="col-md-7">
+                            <div class="product-single-gallery popup-gallery">
+                                <div class="row">
+                                    <div class="col-6 product-item">
+                                        <div class="inner">
+                                            <img src="{{object.ProImg_1.url}}" data-zoom-image="{{object.ProImg_1.url}}" alt="product name">
+                                            <span class="prod-full-screen">
+                                                <i class="icon-plus"></i>
+                                            </span>
+                                        </div>
+                                    </div><!-- End .col-6 -->
+                                    <div class="col-6 product-item">
+                                        <div class="inner">
+                                            <img src="{{object.ProImg_2.url}}" data-zoom-image="{{object.ProImg_2.url}}" alt="product name">
+                                            <span class="prod-full-screen">
+                                                <i class="icon-plus"></i>
+                                            </span>
+                                        </div>
+                                    </div><!-- End .col-6 -->
+                                </div><!-- End .row -->
+                            </div><!-- End .product-single-gallery -->
+                        </div><!-- End .col-md-8 -->
+
+                        
+                    </div><!-- End .row -->
+                </div><!-- End .product-single-container -->
+                <!-- {% for Alter in allAlter %}
+                  <h1>{{Alter}}</h1>
+                {% endfor %} -->
+                <!-- {{allAlter}} -->
+                <div class="product-single-tabs text-end">
+
+                    <ul class="nav nav-tabs float-end" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link fs-3 fw-bold" id="product-tab-desc" data-toggle="tab" href="#product-desc-content" role="tab" aria-controls="product-desc-content" aria-selected="false">مواصفات</a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="product-desc-content" role="tabpanel" aria-labelledby="product-tab-desc">
+                            <div class="product-desc-content">
+                                <p class="text-danger">{{object.ProDesc|safe}}</p>
+                            </div><!-- End .product-desc-content -->
+                        </div><!-- End .tab-pane -->
+                    </div><!-- End .tab-content -->
+                </div><!-- End .product-single-tabs -->
+            </div><!-- End .container -->
+            
+            <!-- <div class="with-border-top">
+                <section class="container product-panel">
+                    <div class="section-title">
+                        <h2>منتجات مشابها</h2>
+                    </div>
+                    <div class="owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
+                        'margin': 4,
+                        'items': 2,
+                        'autoplayTimeout': 5000,
+                        'dots': false,
+                        'nav' : false,
+                        'responsive': {
+                            '768': {
+                                'items': 3
+                            },
+                            '992' : {
+                                'items' : 4
+                            },
+                            '1200': {
+                                'items': 5
+                            }
+                        }
+                    }">
+
+                    
+                        <div class="product-default inner-quickview inner-icon center-details">
+                            <figure>
+                                <a href="product-grid-layout.html">
+                                    <img src="{% static 'assets/images/products/grey/la-germania-freestanding-cooker-90-x-60-cm-5-gas-burners-in-stainless.jpg' %}">
+                                </a>
+                                <a href="product-grid-layout.html" class="btn-view fs-3 fw-bold" title="لتفاصيل اكتر">لتفاصيل اكتر</a> 
+                            </figure>
+                            <div class="product-details">
+                                <div class="category-wrap">
+                                    <div class="category-list">
+                                        <a href="category-sidebar-right.html" class="product-category">category</a>
+                                    </div>
+                                </div>
+                                <h2 class="product-title">
+                                    <a href="product-grid-layout.html">Product Short Name</a>
+                                </h2>
+                                <div class="price-box">
+                                    <span class="old-price">$59.00</span>
+                                    <span class="product-price">$49.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    </div>
+                </section>
+            </div> -->
+
+</main><!-- End .main -->
+<script>  
+    $(document).on("click", "#success", function(e){
+        swal('تم إرسال البيانات وهيتم التواصل مع حضرتك','شكرا','success')
+    });
+</script>
+{% endblock body %}

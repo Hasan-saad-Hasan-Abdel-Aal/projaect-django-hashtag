@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block body %}
+        <main class="main">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <div class="container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'Product:products' %}" class="fs-3 fw-bold">الرئيسية</a></li> .
+                        <li class="breadcrumb-item fs-3 fw-bold active" aria-current="page">سلة المشترايات</li>
+                    </ol>
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="cart-table-container">
+                            <table class="table table-cart">
+                                <thead>
+                                    <tr>
+                                        <th class="product-col fs-3 fw-bold">المنتج</th>
+                                        <th class="price-col fs-3 fw-bold">السعر</th>
+                                        <th class="qty-col fs-3 fw-bold">العدد</th>
+                                        <th class="fs-3 fw-bold">المجموع</th>
+                                        <th class="fs-3 fw-bold text-success"> التوفير</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {% for obj in object.items.all %}
+                                    <tr class="product-row">
+                                        <td class="product-col">
+                                            <figure class="product-image-container">
+                                                <a href="{% url 'Product:productDetail' obj.item.slug%}" class="product-image">
+                                                    <img src="{{ obj.item.ProImg_1.url }}" alt="product">
+                                                </a>
+                                            </figure>
+                                            <h2 class="product-title">
+                                                <a href="{% url 'Product:productDetail' obj.item.slug%}" class="fw-bold">{{ obj.item.ProName }}</a>
+                                            </h2>
+                                        </td>
+                                        <td class="fw-bold p-0"><p class="d-inline-block fs-4 ">ج م</p>{{ obj.item.ProPrice }} </td>
+                                        <td class="fw-bold"><a href="{% url 'Product:remove_signal_item_from_cart' obj.item.slug %}"><i class="fas fa-minus"></i></a> {{obj.quantity}} <a href="{% url 'Product:add_to_cart' obj.item.slug %}"><i class="fas fa-plus"></i></a></td>
+                                        {% if obj.item.ProDiscountPrice %}
+                                            <td class="fw-bold p-0"><p class="d-inline-block fs-4 ">ج م</p>{{ obj.totle_price_discount}}</td>
+                                            <td class="text-success fw-bold p-0"><p class="d-inline-block fs-4 ">ج م</p>{{ obj.totle_saving_price}}</td>
+
+                                        {% else %}
+                                            <td class="fw-bold p-0"><p class="d-inline-block fs-4 ">ج م</p>{{ obj.totle_price}}</td>
+                                        {% endif %}
+                                    </tr>
+                                    <tr class="product-action-row">
+                                        <td colspan="5" class="clearfix">
+                                            <div class="float-right">
+                                                <a href="{% url 'Product:remove_from_cart' obj.item.slug %}" title="حذف المنتج" class="text-danger fas fa-trash-alt"><span class="sr-only">حذف</span></a>
+                                            </div><!-- End .float-right -->
+                                        </td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td>سلتك فارعة</td>
+                                    </tr>
+                                    {% endfor %}                                   
+                                    
+                                </tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5" class="clearfix">
+                                            <div class="float-right">
+                                                <a href="{% url 'Product:products'%}" class="btn btn-outline-secondary fs-3 fw-bold">استمرار التسوق</a>
+                                            </div><!-- End .float-left -->
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div><!-- End .cart-table-container -->
+
+                        
+                    </div><!-- End .col-lg-8 -->
+
+                    <div class="col-lg-4">
+                        <div class="cart-summary">
+                            <h3 class="fs-1 fw-bold text-center">مراجعة طلبك </h3>
+                            <table class="table table-totals">
+                                <tbody>
+                                    <tr>
+                                        <td class="fs-3 fw-bold text-success"><p class="d-inline-block fs-4 ">ج م</p>{{object.get_total_saving}}</td>
+                                        <td class="fs-3 fw-bold text-success">اجمالي التوفير</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fs-3 fw-bold">سوف يتم حسابه</td>
+                                        <td class="fs-3 fw-bold">تكاليف الشحن</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td class="fs-3 fw-bold "><p class="d-inline-block fs-4 ">ج م</p>{{object.get_total}}</td>
+                                        <td class="fs-3 fw-bold ">المجموع الكلي</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                            <div class="checkout-methods">
+                                <a href="checkout-shipping-2.html" class="btn btn-block btn-sm btn-primary fs-1 fw-bold">متابعة عملية الشراء</a>
+                                <!-- <a href="#" class="btn btn-link btn-block">Check Out with Multiple Addresses</a> -->
+                            </div><!-- End .checkout-methods -->
+                        </div><!-- End .cart-summary -->
+                    </div><!-- End .col-lg-4 -->
+                </div><!-- End .row -->
+            </div><!-- End .container -->
+        </main><!-- End .main -->
+{% endblock body %}

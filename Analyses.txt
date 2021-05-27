@@ -1,0 +1,15 @@
+- FrontEnd
+	- 					 ----> Count of the Cart
+						|
+- BackEnd		    -----> Add to cart - ----> Page the Cart 	
+	- Home		   |
+	- List------------- -----> Category ----|----> On click the link go to filter category
+	- Detail	   |
+	- Card		    -----> Handling ---- ----> Filter
+	- CheckOut-Shipping			|----> links of all pages
+	- CheckOut-Review			 ----> Pagination
+	- About
+	- Contact
+	- Slug(Done)
+	- Admin
+	- Img(Done)

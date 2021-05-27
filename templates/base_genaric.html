@@ -1,0 +1,43 @@
+{% load static %}
+{% load mathfilters %}
+{% load cart_template_tags %}
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Hashtag</title>
+
+    <meta name="keywords" content="Hashtag eCommerce" />
+    <meta name="description" content="Hashtag eCommerce">
+    <meta name="author" content="Eng-Hasan">
+        
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/images/icons/hashtag.jpg' %}">
+    
+    
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.new.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/mystyle.css' %}">
+    <!-- links for work Whatsapp button -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- end Whatsapp -->
+    
+</head>
+<body>
+    <div class="contaner">
+        {% block contact %}
+
+        {% endblock contact %}
+        <div class="footer-bottom container">
+            <p  class="fs-3 fw-bold">creatd by Eng-Hasan © 2021</p>
+        </div>
+    </div>

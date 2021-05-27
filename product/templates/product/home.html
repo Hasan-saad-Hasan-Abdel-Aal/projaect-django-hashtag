@@ -1,0 +1,315 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block body %}
+            <main class="home main">
+                <div class="top-slider owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
+                    'items' : 1,
+                    'margin' : 0,
+                    'nav': true,
+                    'dots': false,
+                    'autoplay': false
+                }">
+                    <div class="home-slide">
+                        <div class="slide-content flex-column flex-lg-row">
+                            <img src="{% static 'assets/images/WAYS-2.jpg' %}" class="mx-auto mr-lg-0 py-5" alt="slide image">
+                            <div class="content-right order-first order-lg-1 mx-auto py-5">
+                                <span>تخفيضات</span>
+                                <h2>%20 علي</h2>
+                                <h4 class="cross-txt">LG شاشات</h4>
+                                <h3 class="mb-2 mb-lg-8">تخفيضات الصيف</h3>
+                                <button class="btn">تسوق الان</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-slide">
+                        <div class="slide-content flex-column flex-lg-row">
+                            <div class="content-left mx-auto mr-lg-0 py-5">
+                                <span>تخفيضات</span>
+                                <h2>20% علي</h2>
+                                <h4 class="cross-txt">الأجهزة</h4>
+                                <h3 class="mb-2 mb-lg-8">تخفيضات الصيف</h3>
+                                <button class="btn">تسوق الان</button>
+                            </div>
+                            <div class="image-container mx-auto py-5">
+                                <img src="{% static 'assets/images/HA.jpg' %}" class="slide-img1" alt="slide image">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="container">
+                    <section class="product-panel">
+                        <div class="section-title">
+                            <h2>غسالات</h2>
+                        </div>
+                        <div class="owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
+                            'margin': 4,
+                            'items': 2,
+                            'autoplayTimeout': 5000,
+                            'dots': false,
+                            'nav' : true,
+                            'responsive': {
+                                '768': {
+                                    'items': 3
+                                },
+                                '992' : {
+                                    'items' : 4
+                                },
+                                '1200': {
+                                    'items': 5
+                                }
+                            }
+                        }">
+
+                            {% for pro in home %}
+                        
+                                <div class="product-default inner-quickview inner-icon center-details">
+                                    <figure>
+                                        <a href="{{ pro.get_absolute_url }}">
+                                            <img src="{{ pro.ProImg_1.url}}">
+                                        </a>
+                                        <a href="{{ pro.get_absolute_url }}" class="btn-view fs-3 fw-bold" title="لتفاصيل اكتر">لتفاصيل اكتر</a> 
+                                    </figure>
+                                    <div class="product-details">
+                                        <div class="category-wrap">
+                                            <div class="category-list">
+                                                <a href="{{pro.get_category_url}}" class="product-category">{{ pro.ProCtegory }}</a>
+                                            </div>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a href="{{ pro.get_absolute_url }}">{{ pro }}</a>
+                                        </h2>
+                                        <div class="price-box">
+                                            
+                                            {% if pro.ProDiscountPrice %}
+                                                <span class="old-price">{{ pro.ProPrice }}</span>
+                                                <span class="product-price">{{ pro.ProDiscountPrice }}</span>
+                                            {% else %}
+                                                <span class="product-price">{{ pro.ProPrice }}</span>
+                                            {% endif %}
+                                                
+                                        </div><!-- End .price-box -->
+                                    </div><!-- End .product-details -->
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <section class="product-panel">
+                        <div class="section-title">
+                            <h2>شاشات</h2>
+                        </div>
+                        <div class="owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
+                            'margin': 4,
+                            'items': 2,
+                            'autoplayTimeout': 5000,
+                            'dots': false,
+                            'nav' : true,
+                            'responsive': {
+                                '768': {
+                                    'items': 3
+                                },
+                                '992' : {
+                                    'items' : 4
+                                },
+                                '1200': {
+                                    'items': 5
+                                }
+                            }
+                        }">
+                            {% for pro in degetal %}
+                            
+                                <div class="product-default inner-quickview inner-icon center-details">
+                                    <figure>
+                                        <a href="{{ pro.get_absolute_url }}">
+                                            <img src="{{ pro.ProImg_1.url}}">
+                                        </a>
+                                        <a href="{{ pro.get_absolute_url }}" class="btn-view fs-3 fw-bold" title="لتفاصيل اكتر">لتفاصيل اكتر</a> 
+                                    </figure>
+                                    <div class="product-details">
+                                        <div class="category-wrap">
+                                            <div class="category-list">
+                                                <a href="{{ pro.get_category_url }}" class="product-category">{{ pro.ProCtegory }}</a>
+                                            </div>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a href="{{ pro.get_absolute_url }}">{{ pro }}</a>
+                                        </h2>
+                                        <div class="price-box">
+                                            
+                                            {% if pro.ProDiscountPrice %}
+                                                <span class="old-price">{{ pro.ProPrice }}</span>
+                                                <span class="product-price">{{ pro.ProDiscountPrice }}</span>
+                                            {% else %}
+                                                <span class="product-price">{{ pro.ProPrice }}</span>
+                                            {% endif %}
+                                                
+                                        </div><!-- End .price-box -->
+                                    </div><!-- End .product-details -->
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+                    <div class="product-cat-box owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
+                        'margin': 0,
+                        'items': 2,
+                        'loop' : false,
+                        'autoplay' : false,
+                        'dots': false,
+                        'nav' : true,
+                        'responsive': {
+                            '0' : {
+                                'items' : 2
+                            },
+                            '768': {
+                                'items': 3
+                            },
+                            '992' : {
+                                'items' : 4
+                            },
+                            '1200': {
+                                'items': 5
+                            }
+                        }
+                    }">
+                        <div class="product-cat">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Saving Money</span>
+                        </div>
+                        <div class="product-cat">
+                            <i class="fas fa-tv"></i>
+                            <span>Save Time</span>
+                        </div>
+                        <div class="product-cat">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Easy Shopping</span>
+                        </div>
+                        <div class="product-cat">
+                            <i class="far fa-handshake"></i>                      
+                            <span>Confidence</span>
+                        </div>
+                        <div class="product-cat">
+                            <i class="fas fa-medal"></i>
+                            <span>Guarantee</span>
+                        </div>
+                    </div>
+                    <div class="row row-sm mb-5 home-banner4 text-center">
+                </div>
+
+                <div class="home-banner mb-3 flex-wrap flex-md-nowrap">
+                </div>
+                    <section class="product-panel">
+                        <div class="section-title">
+                            <h2>بوتاجازات</h2>
+                        </div>
+                        <div class="owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
+                            'margin': 4,
+                            'items': 2,
+                            'autoplayTimeout': 5000,
+                            'dots': false,
+                            'nav' : true,
+                            'responsive': {
+                                '768': {
+                                    'items': 3
+                                },
+                                '992' : {
+                                    'items' : 4
+                                },
+                                '1200': {
+                                    'items': 5
+                                }
+                            }
+                        }">
+                            {% for pro in android %}
+                            
+                                <div class="product-default inner-quickview inner-icon center-details">
+                                    <figure>
+                                        <a href="{{ pro.get_absolute_url }}">
+                                            <img src="{{ pro.ProImg_1.url}}">
+                                        </a>
+                                        <a href="{{ pro.get_absolute_url }}" class="btn-view fs-3 fw-bold" title="لتفاصيل اكتر">لتفاصيل اكتر</a> 
+                                    </figure>
+                                    <div class="product-details">
+                                        <div class="category-wrap">
+                                            <div class="category-list">
+                                                <a href="{{pro.get_category_url}}" class="product-category">{{ pro.ProCtegory }}</a>
+                                            </div>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a href="{{ pro.get_absolute_url }}">{{ pro }}</a>
+                                        </h2>
+                                        <div class="price-box">
+                                            
+                                            {% if pro.ProDiscountPrice %}
+                                                <span class="old-price">{{ pro.ProPrice }}</span>
+                                                <span class="product-price">{{ pro.ProDiscountPrice }}</span>
+                                            {% else %}
+                                                <span class="product-price">{{ pro.ProPrice }}</span>
+                                            {% endif %}
+                                                
+                                        </div><!-- End .price-box -->
+                                    </div><!-- End .product-details -->
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <section class="product-panel">
+                        <div class="section-title">
+                            <h2>ثلاجات</h2>
+                        </div>
+                        <div class="owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
+                            'margin': 4,
+                            'items': 2,
+                            'autoplayTimeout': 5000,
+                            'dots': false,
+                            'nav' : true,
+                            'responsive': {
+                                '768': {
+                                    'items': 3
+                                },
+                                '992' : {
+                                    'items' : 4
+                                },
+                                '1200': {
+                                    'items': 5
+                                }
+                            }
+                        }">
+                            {% for pro in smart %}
+                            
+                                <div class="product-default inner-quickview inner-icon center-details">
+                                    <figure>
+                                        <a href="{{ pro.get_absolute_url }}">
+                                            <img src="{{ pro.ProImg_1.url}}">
+                                        </a>
+                                        <a href="{{ pro.get_absolute_url }}" class="btn-view fs-3 fw-bold" title="لتفاصيل اكتر">لتفاصيل اكتر</a> 
+                                    </figure>
+                                    <div class="product-details">
+                                        <div class="category-wrap">
+                                            <div class="category-list">
+                                                <a href="{{pro.get_category_url}}" class="product-category">{{ pro.ProCtegory }}</a>
+                                            </div>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a href="{{ pro.get_absolute_url }}">{{ pro }}</a>
+                                        </h2>
+                                        <div class="price-box">
+                                            
+                                            {% if pro.ProDiscountPrice %}
+                                                <span class="old-price">{{ pro.ProPrice }}</span>
+                                                <span class="product-price">{{ pro.ProDiscountPrice }}</span>
+                                            {% else %}
+                                                <span class="product-price">{{ pro.ProPrice }}</span>
+                                            {% endif %}
+                                                
+                                        </div><!-- End .price-box -->
+                                    </div><!-- End .product-details -->
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+            </main><!-- End .main -->
+
+{% endblock %}
