@@ -48,11 +48,11 @@
                                 
                                 {% if user.is_authenticated %}
                                 <div class=" p-2 text-white">
-                                    <a href="{% url 'account_logout' %}" class="fs-2 btn-block"><i class="fas fa-sign-in-alt"></i></a>
+                                    <a href="{% url 'account_logout' %}" class="fs-2 btn-block"> تسجيل الخروج <i class="fas fa-sign-in-alt"></i></a>
                                 </div>
                                 {% else %}
                                 <div class=" p-2 text-white">
-                                    <a href="{% url 'account_login' %}" class="fs-2 btn-block"><i class="fas fa-user"></i></a>
+                                    <a href="{% url 'account_login' %}" class="fs-2 btn-block"> تسجيل الدخول <i class="fas fa-user"></i></a>
                                 </div>
                                 {% endif %}
                             </ul>
@@ -135,10 +135,10 @@
                                         <div class="megamenu">
                                             <div class="row row-sm">
                                                 <div class="col-lg-4">
-                                                    <a href="category-sidebar-right.html" class="fs-4 fw-bold">شركات</a>
+                                                    <a href="{% url 'product:products' %}" class="fs-4 fw-bold">شركات</a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">فيليبس</a></li>
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">إليوس</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">فيليبس</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">إليوس</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -149,10 +149,10 @@
                                         <div class="megamenu">
                                             <div class="row row-sm">
                                                 <div class="col-lg-4">
-                                                    <a href="category-sidebar-right.html" class="fs-4 fw-bold">تكييفات</a>
+                                                    <a href="{% url 'product:products' %}" class="fs-4 fw-bold">تكييفات</a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">تكييفات اسمارت</a></li>
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">تكييفات ديجيتال</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">تكييفات اسمارت</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">تكييفات ديجيتال</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -163,9 +163,9 @@
                                         <div class="megamenu">
                                             <div class="row row-sm">
                                                 <div class="col-lg-4">
-                                                    <a href="category-sidebar-right.html" class="fs-4 fw-bold">مكنسة</a>
+                                                    <a href="{% url 'product:products' %}" class="fs-4 fw-bold">مكنسة</a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">مكنسة كهراباء</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">مكنسة كهراباء</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -176,9 +176,9 @@
                                         <div class="megamenu">
                                             <div class="row row-sm">
                                                 <div class="col-lg-4">
-                                                    <a href="category-sidebar-right.html" class="fs-4 fw-bold">فرن </a>
+                                                    <a href="{% url 'product:products' %}" class="fs-4 fw-bold">فرن </a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">شوايات</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">شوايات</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -189,10 +189,10 @@
                                         <div class="megamenu">
                                             <div class="row row-sm">
                                                 <div class="col-lg-4">
-                                                    <a href="category-sidebar-right.html" class="fs-4 fw-bold">اجهزة تحضير الافطار</a>
+                                                    <a href="{% url 'product:products' %}" class="fs-4 fw-bold">اجهزة تحضير الافطار</a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">ماكينة القهوة</a></li>
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">ماكينة اعداد البيض</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">ماكينة القهوة</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">ماكينة اعداد البيض</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -203,10 +203,10 @@
                                         <div class="megamenu">
                                             <div class="row row-sm">
                                                 <div class="col-lg-4">
-                                                    <a href="category-sidebar-right.html" class="fs-4 fw-bold">شاشات</a>
+                                                    <a href="{% url 'product:products' %}" class="fs-4 fw-bold">شاشات</a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">شاشات ليد</a></li>
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">شاشات اسمارت</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">شاشات ليد</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">شاشات اسمارت</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -217,9 +217,9 @@
                                         <div class="megamenu">
                                             <div class="row row-sm">
                                                 <div class="col-lg-4">
-                                                    <a href="category-sidebar-right.html" class="fs-4 fw-bold">غسالات صحون</a>
+                                                    <a href="{% url 'product:products' %}" class="fs-4 fw-bold">غسالات صحون</a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">غسالة صحون توشيبا</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">غسالة صحون توشيبا</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -230,9 +230,9 @@
                                         <div class="megamenu">
                                             <div class="row row-sm">
                                                 <div class="col-lg-4">
-                                                    <a href="category-sidebar-right.html" class="fs-4 fw-bold">غسالات صحون</a>
+                                                    <a href="{% url 'product:products' %}" class="fs-4 fw-bold">غسالات صحون</a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">غسالة صحون توشيبا</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">غسالة صحون توشيبا</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -244,17 +244,17 @@
                                         <div class="megamenu">
                                             <div class="row row-sm">
                                                 <div class="col-lg-4">
-                                                    <a href="category-sidebar-right.html" class="fs-4 fw-bold">اجهزة منزلية صغيرة</a>
+                                                    <a href="{% url 'product:products' %}" class="fs-4 fw-bold">اجهزة منزلية صغيرة</a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">سخانات كهراباء</a></li>
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">سخانات غاز</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">سخانات كهراباء</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">سخانات غاز</a></li>
                                                     </ul>
                                                 </div><!-- End .col-lg-4 -->
                                                 <div class="col-lg-4">
-                                                    <a href="category-sidebar-right.html" class="fs-4 fw-bold">اجهزة تحضير الطعام</a>
+                                                    <a href="{% url 'product:products' %}" class="fs-4 fw-bold">اجهزة تحضير الطعام</a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">كيتش ماشين</a></li>
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">خلاطات</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">كيتش ماشين</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">خلاطات</a></li>
                                                     </ul>
                                                 </div><!-- End .col-lg-4 -->
 
@@ -271,15 +271,15 @@
                                                 <div class="col-lg-4">
                                                     <a href="#" class="fs-4 fw-bold">غسالات ملابس</a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">غسالة توشيبا</a></li>
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">غسالة يونيون اير</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">غسالة توشيبا</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">غسالة يونيون اير</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <a href="#" class="fs-4 fw-bold">ثلاجات </a>
                                                     <ul class="submenu">
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">ثلاجات 20 قدم</a></li>
-                                                        <li><a href="category-sidebar-right.html" class="fs-4 fw-bold">ثلاجات 30 قدم</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">ثلاجات 20 قدم</a></li>
+                                                        <li><a href="{% url 'product:products' %}" class="fs-4 fw-bold">ثلاجات 30 قدم</a></li>
                                                     </ul>
                                                 </div>
                                                 <!-- <div class="col-lg-4 image-container">
@@ -387,16 +387,16 @@
                                     <h3 class="widget-title fs-3 fw-bold">الاقسام</h3>
                                     <div class="widget-content row row-sm">
                                         <ul class="col-xl-6">
-                                            <li><a href="product-grid-layout.html" class="fs-3 fw-bold">افران</a></li>
-                                            <li><a href="product-grid-layout.html" class="fs-3 fw-bold">اجهزة تحضير الافطار</a></li>
-                                            <li><a href="product-grid-layout.html" class="fs-3 fw-bold">شاشات</a></li>
-                                            <li><a href="product-grid-layout.html" class="fs-3 fw-bold">غسالات صحون</a></li>
+                                            <li><a href="{% url 'product:products' %}" class="fs-3 fw-bold">افران</a></li>
+                                            <li><a href="{% url 'product:products' %}" class="fs-3 fw-bold">اجهزة تحضير الافطار</a></li>
+                                            <li><a href="{% url 'product:products' %}" class="fs-3 fw-bold">شاشات</a></li>
+                                            <li><a href="{% url 'product:products' %}" class="fs-3 fw-bold">غسالات صحون</a></li>
                                         </ul>
                                         <ul class="col-xl-6">
-                                            <li><a href="product-grid-layout.html" class="fs-3 fw-bold">الاجهزة الكهربائية</a></li>
-                                            <li><a href="product-grid-layout.html" class="fs-3 fw-bold">الاجهزة المنزلية</a></li>
-                                            <li><a href="product-grid-layout.html" class="fs-3 fw-bold">تكييفات</a></li>
-                                            <li><a href="product-grid-layout.html" class="fs-3 fw-bold">مكنسة</a></li>
+                                            <li><a href="{% url 'product:products' %}" class="fs-3 fw-bold">الاجهزة الكهربائية</a></li>
+                                            <li><a href="{% url 'product:products' %}" class="fs-3 fw-bold">الاجهزة المنزلية</a></li>
+                                            <li><a href="{% url 'product:products' %}" class="fs-3 fw-bold">تكييفات</a></li>
+                                            <li><a href="{% url 'product:products' %}" class="fs-3 fw-bold">مكنسة</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -439,81 +439,81 @@
                     <ul class="mobile-menu">
                         <li class="active"><a href="{%url 'Product:home' %}">الرئيسية</a></li>
                         <li>
-                            <a href="category-sidebar-right.html" class="nolink">الاجهزة الكهربائية</a>
+                            <a href="{% url 'product:products' %}" class="nolink">الاجهزة الكهربائية</a>
                             <ul>
                                 <li>
-                                    <a href="category-sidebar-right.html" class="nolink">غسالات ملابس</a>
+                                    <a href="{% url 'product:products' %}" class="nolink">غسالات ملابس</a>
                                     <ul>
-                                        <li><a href="category-sidebar-right.html">غسالة توشيبا</a></li>
-                                        <li><a href="category-sidebar-right.html">غسالة يونيون اير</a></li>
+                                        <li><a href="{% url 'product:products' %}">غسالة توشيبا</a></li>
+                                        <li><a href="{% url 'product:products' %}">غسالة يونيون اير</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="category-sidebar-right.html">ثلاجات</a>
+                                    <a href="{% url 'product:products' %}">ثلاجات</a>
                                     <ul>
-                                        <li><a href="product-grid-layout.html">ثلاجات 20 قدم</a></li>
-                                        <li><a href="product-grid-layout.html">ثلاجات 30 قدم</a></li>
+                                        <li><a href="{% url 'product:products' %}">ثلاجات 20 قدم</a></li>
+                                        <li><a href="{% url 'product:products' %}">ثلاجات 30 قدم</a></li>
                                     </ul>
                                 </li>
     
                             </ul>                    
                         </li>
                         <li>
-                            <a href="category-sidebar-right.html">الاجهزة المنزلية</a>
+                            <a href="{% url 'product:products' %}">الاجهزة المنزلية</a>
                             <ul>
                                 <li>
-                                    <a href="product-grid-layout.html" class="nolink">اجهزة منزلية صغيرة</a>
+                                    <a href="{% url 'product:products' %}" class="nolink">اجهزة منزلية صغيرة</a>
                                     <ul>
-                                        <li><a href="product-grid-layout.html">سخانات كهراباء</a></li>
-                                        <li><a href="product-grid-layout.html">سخانات غاز</a></li>
+                                        <li><a href="{% url 'product:products' %}">سخانات كهراباء</a></li>
+                                        <li><a href="{% url 'product:products' %}">سخانات غاز</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="product-grid-layout.html" class="nolink">اجهزة تحضير الطعام</a>
+                                    <a href="{% url 'product:products' %}" class="nolink">اجهزة تحضير الطعام</a>
                                     <ul>
-                                        <li><a href="product-grid-layout.html">كيتش ماشين</a></li>
-                                        <li><a href="product-grid-layout.html">خلاطات</a></li>
+                                        <li><a href="{% url 'product:products' %}">كيتش ماشين</a></li>
+                                        <li><a href="{% url 'product:products' %}">خلاطات</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="product-grid-layout.html">تكييفات</a>
+                            <a href="{% url 'product:products' %}">تكييفات</a>
                             <ul>
-                                <li><a href="product-grid-layout.html">تكييفات اسمارت</a></li>
-                                <li><a href="product-grid-layout.html">تكييفات ديجيتال</a></li>
+                                <li><a href="{% url 'product:products' %}">تكييفات اسمارت</a></li>
+                                <li><a href="{% url 'product:products' %}">تكييفات ديجيتال</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="product-grid-layout.html" class="nolink">مكنسة</a>
+                            <a href="{% url 'product:products' %}" class="nolink">مكنسة</a>
                             <ul>
-                                <li><a href="product-grid-layout.html">مكنسة كهراباء</a></li>
+                                <li><a href="{% url 'product:products' %}">مكنسة كهراباء</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="product-grid-layout.html">افران</a>
+                            <a href="{% url 'product:products' %}">افران</a>
                             <ul>
-                                <li><a href="product-grid-layout.html">شوايات</a></li>
+                                <li><a href="{% url 'product:products' %}">شوايات</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="product-grid-layout.html" class="nolink">اجهزة تحضير الافطار</a>
+                            <a href="{% url 'product:products' %}" class="nolink">اجهزة تحضير الافطار</a>
                             <ul>
-                                <li><a href="product-grid-layout.html">ماكينة القهوة</a></li>
-                                <li><a href="product-grid-layout.html">ماكينة اعداد البيض</a></li>
+                                <li><a href="{% url 'product:products' %}">ماكينة القهوة</a></li>
+                                <li><a href="{% url 'product:products' %}">ماكينة اعداد البيض</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="product-grid-layout.html" class="nolink">شاشات</a>
+                            <a href="{% url 'product:products' %}" class="nolink">شاشات</a>
                             <ul>
-                                <li><a href="product-grid-layout.html">شاشات ليد</a></li>
-                                <li><a href="product-grid-layout.html">شاشات اسمارت</a></li>
+                                <li><a href="{% url 'product:products' %}">شاشات ليد</a></li>
+                                <li><a href="{% url 'product:products' %}">شاشات اسمارت</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="product-grid-layout.html" class="nolink">غسالات صحون</a>
+                            <a href="{% url 'product:products' %}" class="nolink">غسالات صحون</a>
                             <ul>
-                                <li><a href="product-grid-layout.html">غسالة صحون توشيبا</a></li>
+                                <li><a href="{% url 'product:products' %}">غسالة صحون توشيبا</a></li>
                             </ul>
                         </li>
                     </ul>

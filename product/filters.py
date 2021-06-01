@@ -7,7 +7,7 @@ class ProductFilter(django_filters.FilterSet):
 
     class Meta:
         model = Product
-        fields = ['ProCtegory', 'ProBrand', 'ProPrice', 'ProDiscountPrice']
+        fields = ['ProCtegory', 'ProBrand', 'ProDiscountPrice']
 
 
 # class CategoryFilter(django_filters.FilterSet):

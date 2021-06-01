@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'brands',
     'django_filters',
     'crispy_forms',    
-    'bootstrap4',
+    'bootstrap4'
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ListView, DetailView, View
+from django.views.generic import ListView, DetailView, View, CreateView
 from . models import *
 from django.utils import timezone
 from django.contrib import messages
@@ -7,16 +7,27 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from . filters import ProductFilter
-
+# from . forms import ProductForm
 
 class ProductListView(ListView):
     model = Product
     paginate_by = 3
     template_name = "Product\product_list.html"
 
+    def get_context_data(self, **kwargs):
+        context = super(ProductListView, self).get_context_data(**kwargs)
+        context['filter'] = ProductFilter(self.request.GET, queryset=self.get_queryset())
+        return context
+
 class ProductDetailView(DetailView):
     model = Product
     template_name = "Product\product_detail.html"
+
+# class ProductCreateView(CreateView):
+#     model = Product
+#     template_name = "Product\product_list.html"
+
+
 
 # class HomeListView(ListView):
 #     queryset = Product.objects.filter(ProCtegory__icontains='screen')

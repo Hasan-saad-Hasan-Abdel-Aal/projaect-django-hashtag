@@ -35,10 +35,10 @@ class Product(models.Model): # the prodact is a main class
     # ProAlternatve = 
     ProDesc = RichTextField(verbose_name="تفاصيل المنتج")
     ProStock = models.BooleanField(default=True, blank=True, null=True, verbose_name="المخزون")
-    ProPrice = models.DecimalField(max_digits=6, decimal_places=0, verbose_name="السعر")
-    ProDiscountPrice = models.DecimalField(max_digits=6, decimal_places=0, verbose_name="سعر السوق", default=0, blank=True, null=True)
-    ProImg_2 = models.ImageField(upload_to=image_upload, blank=True, null=True, default = 'static/assets/images/no-image.jpg', max_length=250, verbose_name='صورة المنتج2 ')
-    ProImg_1 = models.ImageField(upload_to=image_upload, blank=True, null=True, default = 'static/assets/images/no-image.jpg', max_length=250, verbose_name='صورة المنتج1 ')
+    ProPrice = models.DecimalField(max_digits=6, decimal_places=0, verbose_name="سعر السوق")
+    ProDiscountPrice = models.DecimalField(max_digits=6, decimal_places=0, verbose_name="السعر بعد الخصم", default=0, blank=True, null=True)
+    ProImg_1 = models.ImageField(upload_to=image_upload, blank=True, null=True, default = '../static/assets/images/no-image.jpg', max_length=250, verbose_name='الصورة الرئيسية')
+    ProImg_2 = models.ImageField(upload_to=image_upload, blank=True, null=True, default = '../static/assets/images/no-image.jpg', max_length=250, verbose_name='الصورة الفرعية')
     ProCreated = models.DateTimeField(auto_now=True)
 
     slug = models.SlugField(blank=True, null=True, verbose_name="URl")

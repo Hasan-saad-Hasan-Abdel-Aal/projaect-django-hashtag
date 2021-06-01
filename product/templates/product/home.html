@@ -67,7 +67,11 @@
                                 <div class="product-default inner-quickview inner-icon center-details">
                                     <figure>
                                         <a href="{{ pro.get_absolute_url }}">
-                                            <img src="{{ pro.ProImg_1.url}}">
+                                            {% if pro.ProImg_1 %}
+                                                <img src="{{pro.ProImg_1.url}}">
+                                            {% else %}
+                                                <img src="{% static 'assets/images/no-image.jpg' %}">
+                                            {% endif %}
                                         </a>
                                         <a href="{{ pro.get_absolute_url }}" class="btn-view fs-3 fw-bold" title="لتفاصيل اكتر">لتفاصيل اكتر</a> 
                                     </figure>
@@ -123,7 +127,11 @@
                                 <div class="product-default inner-quickview inner-icon center-details">
                                     <figure>
                                         <a href="{{ pro.get_absolute_url }}">
-                                            <img src="{{ pro.ProImg_1.url}}">
+                                            {% if pro.ProImg_1 %}
+                                                <img src="{{pro.ProImg_1.url}}">
+                                            {% else %}
+                                                <img src="{% static 'assets/images/no-image.jpg' %}">
+                                            {% endif %}
                                         </a>
                                         <a href="{{ pro.get_absolute_url }}" class="btn-view fs-3 fw-bold" title="لتفاصيل اكتر">لتفاصيل اكتر</a> 
                                     </figure>
@@ -226,7 +234,11 @@
                                 <div class="product-default inner-quickview inner-icon center-details">
                                     <figure>
                                         <a href="{{ pro.get_absolute_url }}">
-                                            <img src="{{ pro.ProImg_1.url}}">
+                                            {% if pro.ProImg_1 %}
+                                                <img src="{{pro.ProImg_1.url}}">
+                                            {% else %}
+                                                <img src="{% static 'assets/images/no-image.jpg' %}">
+                                            {% endif %}
                                         </a>
                                         <a href="{{ pro.get_absolute_url }}" class="btn-view fs-3 fw-bold" title="لتفاصيل اكتر">لتفاصيل اكتر</a> 
                                     </figure>
@@ -282,7 +294,11 @@
                                 <div class="product-default inner-quickview inner-icon center-details">
                                     <figure>
                                         <a href="{{ pro.get_absolute_url }}">
-                                            <img src="{{ pro.ProImg_1.url}}">
+                                            {% if pro.ProImg_1 %}
+                                                <img src="{{pro.ProImg_1.url}}">
+                                            {% else %}
+                                                <img src="{% static 'assets/images/no-image.jpg' %}">
+                                            {% endif %}
                                         </a>
                                         <a href="{{ pro.get_absolute_url }}" class="btn-view fs-3 fw-bold" title="لتفاصيل اكتر">لتفاصيل اكتر</a> 
                                     </figure>
